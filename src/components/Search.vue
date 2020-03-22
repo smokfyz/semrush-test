@@ -4,7 +4,9 @@
       <b-input-group-prepend is-text>
         <b-icon icon="search"></b-icon>
       </b-input-group-prepend>
-      <b-form-input type="search" placeholder="Friend's name" v-model="query"></b-form-input>
+      <b-form-input type="search" placeholder="Friend's name"
+                    @keydown.native='e => query = e.target.value'>
+      </b-form-input>
     </b-input-group>
     <b-list-group v-if="friends.length">
       <b-list-group-item v-for="friend in friends" :key="friend.id">
@@ -33,7 +35,7 @@ export default {
     },
   },
   created() {
-    this.searchFriends = this._.debounce(this.searchFriends, 500);
+    this.searchFriends = this._.debounce(this.searchFriends, 300);
   },
   methods: {
     searchFriends() {
