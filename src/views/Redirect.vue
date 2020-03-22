@@ -1,6 +1,5 @@
 <template>
   <div class="redirect">
-    <p>Loading...</p>
   </div>
 </template>
 
