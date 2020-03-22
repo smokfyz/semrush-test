@@ -64,7 +64,6 @@ export default {
         v: '5.103',
       })
         .then((res) => {
-          console.log(res.response);
           this.friendsCount = res.response.count;
         })
         .catch(() => {
