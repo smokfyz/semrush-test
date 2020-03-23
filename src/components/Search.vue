@@ -5,7 +5,7 @@
         <b-icon icon="search"></b-icon>
       </b-input-group-prepend>
       <b-form-input type="search" placeholder="Friend's name"
-                    @keydown.native='e => query = e.target.value'>
+                    @keyup.native='e => query = e.target.value'>
       </b-form-input>
     </b-input-group>
     <b-list-group v-if="friends.length">
