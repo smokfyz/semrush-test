@@ -54,6 +54,7 @@ export default {
         })
         .catch(() => {
           this.error = 'Error while loading profile data.';
+          localStorage.removeItem('access_token');
         });
     },
     async countFriends() {
@@ -68,6 +69,7 @@ export default {
         })
         .catch(() => {
           this.error = 'Error while loading friends list.';
+          localStorage.removeItem('access_token');
         });
     },
   },
