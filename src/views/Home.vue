@@ -1,6 +1,6 @@
 <template>
   <b-container class="home">
-    <b-row align-h="center" v-if="authenticated && profile && friendsCount">
+    <b-row align-h="center" v-if="authenticated && profile != null && friendsCount != null">
       <b-col lg="3">
         <Profile :photo="profile.photo_200" :count="friendsCount"/>
       </b-col>
