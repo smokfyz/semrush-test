@@ -13,7 +13,7 @@ export default {
                                 + `client_id=${process.env.VUE_APP_CLIENT_ID}&`
                                 + `redirect_uri=${process.env.VUE_APP_HOST}/redirect&`
                                 + 'response_type=token&'
-                                + 'scope=offline,friends';
+                                + 'scope=friends';
     },
   },
 };

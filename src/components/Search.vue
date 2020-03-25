@@ -7,6 +7,9 @@
       <b-form-input type="search" placeholder="Friend's name"
                     @keyup.native='e => query = e.target.value'>
       </b-form-input>
+      <b-input-group-append>
+        <b-button v-on:click="searchFriends" variant="info">Search</b-button>
+      </b-input-group-append>
     </b-input-group>
     <b-list-group v-if="friends.length">
       <b-list-group-item v-for="friend in friends" :key="friend.id">
@@ -28,14 +31,6 @@ export default {
       query: '',
       friends: [],
     };
-  },
-  watch: {
-    query() {
-      this.searchFriends();
-    },
-  },
-  created() {
-    this.searchFriends = this._.debounce(this.searchFriends, 300);
   },
   methods: {
     searchFriends() {
